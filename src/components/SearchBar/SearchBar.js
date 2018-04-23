@@ -13,7 +13,7 @@ const styles = {
     SearchBar: {
         backgroundColor: blueGrey50,
         position: 'fixed',
-        top: 1
+        top: 0
     }
 };
 
