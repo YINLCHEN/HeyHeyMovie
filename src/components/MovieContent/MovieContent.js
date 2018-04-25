@@ -25,11 +25,12 @@ class MovieContent extends Component {
         const element =  Object.keys(data).map((key, index) => 
             <MovieElement 
                 key = {index}
-                movie = {data[key].year}
+                year = {data[key].year}
                 movieName = {data[key].name}
                 movie_total_views = {data[key].total_views}
                 movie_total_eps = {data[key].total_eps}
                 movie_vertical_poster = {data[key].vertivcal_poster}
+                data = {data[key]}
             />
         );
 
