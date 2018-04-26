@@ -47,7 +47,7 @@ class SearchBar extends Component {
         return (
             <Toolbar>
                 <ToolbarGroup firstChild={true}>
-                    <ToolbarTitle text="Hey Hey Movie" style={styles.Title} />
+                    <ToolbarTitle text="YINLCHEN x Hey Hey Movie" style={styles.Title} />
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <TextField hintText="Search Movie..." onChange={e => this.dynamicSearch(e.target.value)}/>

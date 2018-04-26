@@ -32,7 +32,7 @@ class MovieContent extends Component {
             else{
                 const movieName = element.props.movieName
                 for(var i=0 ; i<movieName.length ; i++){
-                    if(movieName.substring(i, i+searchStr.length) === searchStr){
+                    if(movieName.toUpperCase().substring(i, i+searchStr.length) === searchStr.toUpperCase()){
                         return true
                     }
                 }

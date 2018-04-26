@@ -34,7 +34,7 @@ class MovieDialog extends Component {
                 label="Play!"
                 target="_blank"
                 href={this.state.data.src}
-                primary={true}
+                secondary={true}
                 keyboardFocused={true}
                 onClick={this.handleClose}
             />,
