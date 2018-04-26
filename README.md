@@ -1,16 +1,16 @@
 #HeyHeyMovie
 
-技術＜/br＞
-使用ReactJS、NodeJS、MongoDB開發
-
-操作＜/br＞
-Clone下來以後，npm start即可執行
-
-DB＜/br＞
-後端資料接mLab MongoDB，並把drama-list.json倒進DB模擬API＜/br＞
-https://imgur.com/a/HtCb2qv
-
-------Begin--------
+技術  
+使用ReactJS、NodeJS、MongoDB開發  
+  
+操作  
+Clone下來以後，npm start即可執行  
+  
+DB  
+後端資料接mLab MongoDB，並把drama-list.json倒進DB模擬API  
+https://imgur.com/a/HtCb2qv  
+  
+------Begin--------  
 *內容
   * 實作一個劇庫頁面：
     * 設計一個頁面以呈現戲劇列表中的內容
