@@ -29,6 +29,7 @@ class MovieElement extends Component {
             total_views: this.props.movie_total_views,
             total_eps: this.props.movie_total_eps,
             vertical_poster: this.props.movie_vertical_poster,
+            src: this.props.movie_src,
             data: this.props.data,
             open: false
         };
@@ -55,7 +56,7 @@ class MovieElement extends Component {
             </div>
         );
     }
-  }
-  
-  export default MovieElement;
+}
+
+export default MovieElement;
   

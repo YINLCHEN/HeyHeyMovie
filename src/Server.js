@@ -25,27 +25,8 @@ var movieSchema = new Schema({
     date: { type: Date, default: Date.now }
 });
 
-
 //Model
 var Movie = mongoose.model('Movie', movieSchema);
-
-//ODM
-/*
-var movie = new Movie({
-    year: 2017,
-    name: "黑騎士",
-    total_views: 532,
-    total_eps: 20,
-    vertivcal_poster: "https://s-media-cache-ak0.pinimg.com/originals/88/2c/dc/882cdca85526dfb9d9f03cf192c0846c.png",
-})
-
-movie.save(function (err){
-    if(err){
-        console.log('Error')
-    }
-    console.log('Success')
-})
-*/
 
 app.use(express.static('build'));
 
@@ -54,7 +35,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/index', function (req, res) {
-    Movie.find({}).exec(function(err, movie) {
+    Movie.find({}).sort({"date":1}).exec(function(err, movie) {
         var map = {};
     
         movie.forEach(function(movie) {

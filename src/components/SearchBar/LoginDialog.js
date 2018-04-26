@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
+import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
-class MovieDialog extends Component {
+class LoginDialog extends Component {
     constructor(props){
         super(props);
         this.state = {
-            open: this.props.open,
-            data: []
+            open: this.props.open
         };
     }
 
     componentWillReceiveProps(nextProps) {
         this.setState({
-            open: nextProps.open,
-            data: nextProps.data
+            open: nextProps.open
         });
      }
 
@@ -31,32 +30,37 @@ class MovieDialog extends Component {
                 onClick={this.handleClose}
             />,
             <FlatButton
-                label="Play!"
-                target="_blank"
-                href={this.state.data.src}
-                primary={true}
+                label="Next"
+                secondary={true}
                 keyboardFocused={true}
                 onClick={this.handleClose}
             />,
         ];
-       
-        var Title = this.state.data.year + "年 " + this.state.data.name;
-        var Content = this.state.data.total_views + "人數觀看 總共" + this.state.data.total_eps + "集";
-
+        
         return (
             <div>
                 <Dialog
-                    title={Title}
+                    title="Welcome"
                     actions={actions}
                     modal={false}
                     open={this.state.open}
                     onRequestClose={this.handleClose}
                     >
-                    {Content}
+                    <TextField
+                        hintText="Email"
+                        floatingLabelText="Email"
+                        />
+                    <br />
+                    <TextField
+                        hintText="Password"
+                        floatingLabelText="Password"
+                        type="password"
+                        />
+                    <br />
                 </Dialog>
             </div>
         );
     }
 }
 
-export default MovieDialog;
+export default LoginDialog;

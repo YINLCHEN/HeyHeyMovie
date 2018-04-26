@@ -33,7 +33,7 @@ class App extends Component {
                     <SearchBar />
                 </MuiThemeProvider>
 
-                <MoviePreview />
+                <MoviePreview props = {this.state.data} />
             
                 <div className="App-Content">
                     <MovieContent props = {this.state.data} />

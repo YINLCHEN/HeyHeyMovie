@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import MovieElement from './MovieElement';
 
 const styles = {
@@ -18,21 +19,38 @@ class MovieContent extends Component {
         this.setState({
             data: nextProps.props
         });
-     }
+    }
 
     render() {
         const data = this.state.data
+        const searchStr = this.props.searchStr
+
+        function findSearchStr(element){
+            if(searchStr===0 || searchStr===''){
+                return true
+            }
+            else{
+                const movieName = element.props.movieName
+                for(var i=0 ; i<movieName.length ; i++){
+                    if(movieName.substring(i, i+searchStr.length) === searchStr){
+                        return true
+                    }
+                }
+            }
+        }
+        
         const element =  Object.keys(data).map((key, index) => 
-            <MovieElement 
+            <MovieElement
                 key = {index}
                 year = {data[key].year}
                 movieName = {data[key].name}
                 movie_total_views = {data[key].total_views}
                 movie_total_eps = {data[key].total_eps}
                 movie_vertical_poster = {data[key].vertivcal_poster}
+                movie_src = {data[key].src}
                 data = {data[key]}
             />
-        );
+        ).filter(findSearchStr);
 
         return (
             <div className="container">
@@ -46,7 +64,13 @@ class MovieContent extends Component {
             </div>       
         );
     }
-  }
+}
+
+function mapStateToProps(state) {
+    return {
+        searchStr: state.searchStr
+    };
+}
   
-  export default MovieContent;
+export default connect(mapStateToProps)(MovieContent);
   
