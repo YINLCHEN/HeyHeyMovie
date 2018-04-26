@@ -24,5 +24,5 @@ https://imgur.com/a/HtCb2qv
     * 於Readme簡述程式執行方法
     * 將程式碼上傳 git，並回覆 git 公開連結
   * 我方提供：
-    * drama-list.json(如附檔)
+    * drama-list.json(如附檔)  
 -----End---------
